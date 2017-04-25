@@ -8,90 +8,55 @@ namespace Lokaverkefni
 {
     public class TopTrumps
     {
-        private string þyngd;
-        private string mjolkurlagni;
-        private string ull;
-        private string afkvæmi;
-        private string læri;
-        private string frjosemi;
-        private string gerðbak;
-        private string malir;
+        private string nafn;
+        private string fadir;
+        private string modir;
+        private int afkvaemi;
 
-        public string Þyngd
+
+        public string Nafn
         {
             get
             {
-                return þyngd;
+                return nafn;
             }
         }
-
-        public string Mjolkurlagni
+        public string Fadir
         {
             get
             {
-                return mjolkurlagni;
-            }
-        }
-        public string Ull
-        {
-            get
-            {
-                return ull;
+                return fadir;
             }
         }
 
-        public string Afkvæmi
+        public string Modir
         {
             get
             {
-                return afkvæmi;
+                return modir;
             }
         }
-        public string Læri
+        public int Afkvaemi
         {
             get
             {
-                return læri;
+                return afkvaemi;
             }
         }
+        
 
-        public string Frjosemi
+        public TopTrumps(string Nafn,string Fadir, string Modir,int Afkvaemi)
         {
-            get
-            {
-                return frjosemi;
-            }
-        }
-        public string GerðBak
-        {
-            get
-            {
-                return gerðbak;
-            }
-        }
-        public string Malir
-        {
-            get
-            {
-                return malir;
-            }
-        }
-
-        public TopTrumps(string Þyngd, string Mjolkurlagni ,string Ull, string Afkvæmi, string Læri, string Frjosemi,string GerðBak,string Malir)
-        {
-
-            þyngd = Þyngd;
-            mjolkurlagni = Mjolkurlagni;
-            ull = Ull;
-            afkvæmi = Afkvæmi;
-            frjosemi = Frjosemi;
-            gerðbak = GerðBak;
-            malir = Malir;
+            nafn = Nafn;
+            fadir = Fadir;
+            modir = Modir;
+            afkvaemi = Afkvaemi;            
+           
         }
 
         public override string ToString()
         {
-            return string.Format("Þyngd: {0}, Mjolkurlagni: {1}, Ull: {2}, Afkvæmi: {3}, Læri: {4}, Frjosemi: {5}, Gerðbak: {6}, Malir: {7}", Þyngd, Mjolkurlagni, Ull, Afkvæmi, Læri, Frjosemi,GerðBak,Malir);
+            return string.Format("Nafn: {0}, Fadir: {1}, Modir: {2}, Afkvaemi: {3}", Nafn,Fadir, Modir,Afkvaemi);
         }
     }
 }
