@@ -11,7 +11,7 @@ namespace Lokaverkefni
         private string nafn;
         private string fadir;
         private string modir;
-        private int afkvaemi;
+        private string afkvaemi;
 
 
         public string Nafn
@@ -36,7 +36,7 @@ namespace Lokaverkefni
                 return modir;
             }
         }
-        public int Afkvaemi
+        public string Afkvaemi
         {
             get
             {
@@ -45,7 +45,7 @@ namespace Lokaverkefni
         }
         
 
-        public TopTrumps(string Nafn,string Fadir, string Modir,int Afkvaemi)
+        public TopTrumps(string Nafn,string Fadir, string Modir,string Afkvaemi)
         {
             nafn = Nafn;
             fadir = Fadir;

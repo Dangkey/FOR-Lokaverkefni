@@ -1,0 +1,5 @@
+H:\FOR2C3U\Lokaverkefni\Lokaverkefni\bin\Debug\Lokaverkefni.dll
+H:\FOR2C3U\Lokaverkefni\Lokaverkefni\bin\Debug\Lokaverkefni.pdb
+H:\FOR2C3U\Lokaverkefni\Lokaverkefni\obj\Debug\Lokaverkefni.csprojResolveAssemblyReference.cache
+H:\FOR2C3U\Lokaverkefni\Lokaverkefni\obj\Debug\Lokaverkefni.dll
+H:\FOR2C3U\Lokaverkefni\Lokaverkefni\obj\Debug\Lokaverkefni.pdb

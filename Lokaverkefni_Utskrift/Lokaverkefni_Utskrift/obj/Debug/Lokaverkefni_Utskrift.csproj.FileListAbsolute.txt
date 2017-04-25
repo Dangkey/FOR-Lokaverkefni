@@ -1,0 +1,8 @@
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni_Utskrift.exe.config
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni_Utskrift.exe
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni_Utskrift.pdb
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni.dll
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni.pdb
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\obj\Debug\Lokaverkefni_Utskrift.csprojResolveAssemblyReference.cache
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\obj\Debug\Lokaverkefni_Utskrift.exe
+H:\FOR2C3U\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\obj\Debug\Lokaverkefni_Utskrift.pdb
