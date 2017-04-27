@@ -10,3 +10,7 @@ H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni
 H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\obj\Debug\Lokaverkefni_Utskrift.exe
 H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\obj\Debug\Lokaverkefni_Utskrift.pdb
 H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\obj\Debug\Lokaverkefni_Utskrift.csprojResolveAssemblyReference.cache
+H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni_Utskrift.exe
+H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni_Utskrift.pdb
+H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni.dll
+H:\4.Önn\FOR\Lokaverkefni_Utskrift\Lokaverkefni_Utskrift\bin\Debug\Lokaverkefni.pdb
