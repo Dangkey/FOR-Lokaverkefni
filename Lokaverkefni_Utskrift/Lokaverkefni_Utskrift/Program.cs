@@ -13,15 +13,15 @@ namespace Lokaverkefni_Utskrift
         {
 
             
-            Hrutaspilid hrutaspilid = new Hrutaspilid("Elas", 100 , 13,5,"3",4,5,3,2,"Hilmar","Api");
-            Hrutaspilid hrutaspilid1 = new Hrutaspilid("Aron", 100, 13, 5, "3", 4, 5, 3, 2, "Hilmar", "Api");
-            Hrutaspilid hrutaspilid2 = new Hrutaspilid("Eyho", 100, 13, 5, "3", 4, 5, 3, 2, "Hilmar", "Api");
-            Hrutaspilid hrutaspilid3 = new Hrutaspilid("Bobbi", 100, 13, 5, "3", 4, 5, 3, 2, "Hilmar", "Api");
+            Hrutaspilid hrutaspilid = new Hrutaspilid("Elas","Hilmar","Api", 100 , 13,5,3,4,5,3,2);
+            Hrutaspilid hrutaspilid1 = new Hrutaspilid("Aron", "Hilmar", "Api", 100, 13, 5, 3, 4, 5, 3, 2);
+            Hrutaspilid hrutaspilid2 = new Hrutaspilid("Eyho", "Hilmar", "Api", 100, 13, 5, 3, 4, 5, 3, 2);
+            Hrutaspilid hrutaspilid3 = new Hrutaspilid("Bobbi", "Hilmar", "Api", 100, 13, 5, 3, 4, 5, 3, 2);
             
             
             TopTrumps[] toptrump = new TopTrumps[4];
             
-            toptrump[0] = hrutaspilid;
+             toptrump[0] = hrutaspilid;
             toptrump[1] = hrutaspilid1;
             toptrump[2] = hrutaspilid2;
             toptrump[3] = hrutaspilid3;
@@ -35,15 +35,7 @@ namespace Lokaverkefni_Utskrift
                 Console.ReadKey();
                 Console.Clear();
 			}
-            /*
-            foreach (TopTrumps it in toptrump)
-            {
-                Console.WriteLine(it[] + "\n");
-                Console.WriteLine("VS\n");
-                Console.WriteLine(it[1] + "\n");
-                Console.ReadKey();
-                Console.Clear();
-            }*/
+            
             Console.ReadKey();
         }
     }

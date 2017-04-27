@@ -8,7 +8,7 @@ namespace Lokaverkefni
 {
     public class Hrutaspilid : TopTrumps
     {
-        private string nafn;
+        /*private string nafn;
         private double þyngd;
         private int mjolkurlagni;
         private double ull;
@@ -19,31 +19,33 @@ namespace Lokaverkefni
         private double malir;
         private string fadir;
         private string modir;
+         * */
 
-        public double Þyngd { get; set; }
-        public int Mjolkurlagni { get; set; }
-        public double Ull { get; set; }
-        public string Afkvaemi { get; set; }
-        public double Laeri { get; set; }
-        public int Frjosemi { get; set; }
-        public int Bakvodvi { get; set; }
-        public double Malir { get; set; }
+        public double Þyngd { get; private set; }
+        public int Mjolkurlagni { get; private set; }
+        public double Ull { get; private set; }
+        public int Afkvaemi { get; private set; }
+        public double Laeri { get; private set; }
+        public int Frjosemi { get; private set; }
+        public int Bakvodvi { get; private set; }
+        public double Malir { get; private set; }
 
-        public Hrutaspilid(string nafn,double þyngd,int mjolkurlagni,double ull,string afkvaemi,double laeri,int frjosemi, int bakvodvi, double malir,string fadir, string modir)
-            : base(nafn,fadir,modir,afkvaemi)
+        public Hrutaspilid(string nafn, string fadir, string modir, double þyngd,int mjolkurlagni,double ull,int afkvaemi,double laeri,int frjosemi, int bakvodvi, double malir)
+            : base(nafn,fadir,modir)
         {
-            þyngd = Þyngd;
-            mjolkurlagni = Mjolkurlagni;
-            ull = Ull;
-            afkvæmi = Afkvaemi;
-            laeri = Laeri;
-            frjosemi = Frjosemi;
-            bakvodvi = Bakvodvi;
-            malir = Malir;
+            Þyngd = þyngd;
+            Mjolkurlagni = mjolkurlagni;
+            Ull = ull;
+            Afkvaemi = afkvaemi;
+            Laeri = laeri;
+            Frjosemi = frjosemi;
+            Bakvodvi = bakvodvi;
+            Malir = malir;
+            //nafn = Nafn
         }
         public override string ToString()
         {
-            return string.Format("Nafn: {0},\nÞyngd: {1},\nMjolkurlagni: {2},\nUll: {3},\nAfkvæmi: {4},\nLæri: {5},\nFrjósemi: {6},\nBakvöðvi: {7},\nMalir: {8},\nFaðir: {9},\nMóðir: {10},\n", Nafn, Þyngd,Mjolkurlagni, Ull, Afkvaemi, Laeri, Frjosemi, Bakvodvi, Malir, Fadir, Modir);
+            return base.ToString() + string.Format("Þyngd: {0},\nMjolkurlagni: {1},\nUll: {2},\nLæri: {3},\nFrjósemi: {4},\nBakvöðvi: {5},\nMalir: {6},\nAfkvæmi: {7}\n", Þyngd,Mjolkurlagni, Ull,  Laeri, Frjosemi, Bakvodvi, Malir, Afkvaemi);
         }
 
         

@@ -8,55 +8,32 @@ namespace Lokaverkefni
 {
     public class TopTrumps
     {
-        private string nafn;
+        //private string nafn;
+        /*
         private string fadir;
         private string modir;
-        private string afkvaemi;
+        */
+
+        public string Nafn{ get; private set; }
+        
+        public string Fadir{get;private set;}
 
 
-        public string Nafn
-        {
-            get
-            {
-                return nafn;
-            }
-        }
-        public string Fadir
-        {
-            get
-            {
-                return fadir;
-            }
-        }
-
-        public string Modir
-        {
-            get
-            {
-                return modir;
-            }
-        }
-        public string Afkvaemi
-        {
-            get
-            {
-                return afkvaemi;
-            }
-        }
+        public string Modir { get; private set; }
+        
         
 
-        public TopTrumps(string Nafn,string Fadir, string Modir,string Afkvaemi)
+        public TopTrumps(string nafn,string fadir, string modir)
         {
-            nafn = Nafn;
-            fadir = Fadir;
-            modir = Modir;
-            afkvaemi = Afkvaemi;            
+            Nafn = nafn;
+            Fadir = fadir;
+            Modir = modir;
            
         }
 
         public override string ToString()
         {
-            return string.Format("Nafn: {0}, Fadir: {1}, Modir: {2}, Afkvaemi: {3}", Nafn,Fadir, Modir,Afkvaemi);
+            return string.Format("Nafn: {0}\nFadir: {1}\nModir: {2}\n", Nafn,Fadir, Modir);
         }
     }
 }
