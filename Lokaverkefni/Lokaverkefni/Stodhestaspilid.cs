@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Lokaverkefni
 {
-    class Stodhestaspilid : TopTrumps
+    public class Stodhestaspilid : TopTrumps
     {
-        public string Litanumer { get; private set; }        
-        public string ByggingAdaleinkunn{ get; private set; }        
-        public string HaefileikarAdaleinkunn { get; private set; }
+        public int Litanumer { get; private set; }        
+        public double ByggingAdaleinkunn{ get; private set; }        
+        public double HaefileikarAdaleinkunn { get; private set; }
         public double Adaleinkunn { get; private set; }
         public int Afkvaemi { get; private set; }
         public int Stangarmal { get; private set; }
         public int Kynbotamat { get; private set; }
 
-        public Stodhestaspilid(string nafn, string fadir, string modir, string litanumer,string byggingAdaleinkunn,string haefileikarAdaleinkunn,double adaleinkunn,int afkvaemi, int stangarmal, int kynbotamat)
+        public Stodhestaspilid(string nafn, string fadir, string modir, int litanumer,double byggingAdaleinkunn,double haefileikarAdaleinkunn,double adaleinkunn,int afkvaemi, int stangarmal, int kynbotamat)
             : base(nafn,fadir,modir)
         {
             Litanumer = litanumer;            

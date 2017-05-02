@@ -15,6 +15,7 @@ namespace Lokaverkefni_Utskrift
 
             Random random = new Random();
            List<Hrutaspilid> Listi = new List<Hrutaspilid>();
+           List<Stodhestaspilid> ListiStod = new List<Stodhestaspilid>();
            List<Hrutaspilid> Spilnot = new List<Hrutaspilid>();
             List<Hrutaspilid> Spiltolvu = new List<Hrutaspilid>();
 
@@ -70,7 +71,65 @@ namespace Lokaverkefni_Utskrift
          Listi.Add(new Hrutaspilid("Krókur", "Tumi", "Dröfn", 47.5, 101, 8.0, 218, 17.5, 97, 157, 8.7));
          Listi.Add(new Hrutaspilid("Undri", "Kútur", "02-037",49.1, 108, 8.4, 76, 17.2, 100, 109, 8.4));
          Listi.Add(new Hrutaspilid("Ás", "Snoddi", "01-120", 48.8, 121, 8.1, 82, 17.2, 108, 110, 8.3));
+            //Stodhestaspilid
 
+
+
+        
+         ListiStod.Add(new Stodhestaspilid("Þristur frá Feti", "Orri frá Þúfu", "Skák frá Feti", 2510, 8.14, 8.35, 8.27, 275, 141, 117));
+         ListiStod.Add(new Stodhestaspilid("Þokki frá Kýrholti","Sólon frá Hóli","Þörf frá Hólum",2200,8.28,9.04,8.73,175,143,123));
+         ListiStod.Add(new Stodhestaspilid("Sveinn-Hervar frá Þúfu","Orri frá Þúfu","Rák frá Þúfu",2500,8.06,8.38,8.25,291,139,119));
+         ListiStod.Add(new Stodhestaspilid("Andvari frá Ey 1", "Orri frá Þúfu", "Leira frá Ey 1",1600,8.33,8.40,8.36,500,136,120));
+         ListiStod.Add(new Stodhestaspilid("Borði frá Fellskoti","Hugi frá Hafsteinsstöðum","Sokkadís frá Bergstöðum",1510,7.89,8.48,8.24,83,141,119));
+         ListiStod.Add(new Stodhestaspilid("Rökkvi frá Hárlaugsstöðum", "Otur frá Sauðárkróki","Snegla frá Hala",2500,8.13,8.48,8.34,261,141,109));
+         ListiStod.Add(new Stodhestaspilid("Kraftur frá Efri-Þverá","Kolfinnur frá Kjarnholtum 1","Drótt frá Kópavogi",3400,8.20,8.48,8.37,24,143,115));
+         ListiStod.Add(new Stodhestaspilid("Oddur frá Selfossi","Kjarval frá Sauðárkróki","Leira frá Þingdal",4521,8.10,8.86,8.48,391,136,118));
+         ListiStod.Add(new Stodhestaspilid("Fursti frá Stóra-Hofi","Óður frá Brún", "Hnota frá Stóra-Hofi",3500,8.09,8.78,8.51,36,143,121));
+         ListiStod.Add(new Stodhestaspilid("Glymur frá Innri-Skeljabrekku","Gaukur frá Innri-Skeljabrekku","Þyrla frá Norðtungu",8600,7.98,8.65,8.38,87,142,115));
+         ListiStod.Add(new Stodhestaspilid("Klettur frá Hvammi","Gustur frá Hóli", "Dóttla frá Hvammi", 0210,8.43,8.54,8.49,211,140,121));
+         ListiStod.Add(new Stodhestaspilid("Aðall frá Nýjabæ","Adam frá Meðalfelli","Furða frá Nýjabæ",3500,8.13,8.97,8.64,82,143,118));
+         ListiStod.Add(new Stodhestaspilid("Gígjar frá Auðsholtshjáleigu","Orri frá Þúfu","Hrafntinna frá Auðsholtash.",2520,7.98,8.78,8.46,168,136,123));
+         ListiStod.Add(new Stodhestaspilid("Hruni frá Breiðumörk 2", "Hrannar frá Höskuldsstöðum", "Hetta frá Breiðumörk 2",7510,7.61,8.41,8.09,34,133,108));
+         ListiStod.Add(new Stodhestaspilid("Kjarkur frá Egilsstaðabæ","Otur frá Sauðárkróki", "Hrefna frá Mýnesi", 2700,7.85,8.71,8.28,354,133,106));
+         ListiStod.Add(new Stodhestaspilid("Hróður frá Refsstöðum","Léttir frá Stóra-Ási", "Rán frá Refsstöðum", 1590,7.94,8.69,8.39,344,135,125));
+         ListiStod.Add(new Stodhestaspilid("Illingur frá Tóftum", "Númi frá Þóroddsstöðum","Hrísla frá Laugarvatni",1510,8.45,8.81,8.67,195,137,124));
+         ListiStod.Add(new Stodhestaspilid("Sigur frá Hólabaki","Parker frá Sólheimum", "Sigurdís frá Hólabaki",1620,8.24,7.85,8.01,5,141,112));
+         ListiStod.Add(new Stodhestaspilid("Stáli frá Kjarri", "Galsi frá Sauðárkróki", "Jónína frá Hala", 7500,8.26,9.09,8.76,70,140,121));
+         ListiStod.Add(new Stodhestaspilid("Gári frá Auðsholtshjáleigu","Orri frá Þúfu","Limra frá Laugarvatni", 1600,8.87,8.47,8.63,162,143,125));
+         ListiStod.Add(new Stodhestaspilid("Hugi frá Hafsteinsstöðum", "Hrafn frá Holtsmúla", "Sýn frá Hafsteinsstöðum",1551,8.13,8.49,8.31,370,137,119));
+         ListiStod.Add(new Stodhestaspilid("Funi frá Vindási","Dynur frá Hvammi", "Drífa frá Vindási",1600,8.08,8.65,8.42,29,144,122));
+         ListiStod.Add(new Stodhestaspilid("Orri frá Þúfu", "Otur frá Sauðárkróki", "Dama frá Þúfu",2500,8.08,8.61,8.34,1049,136,127));
+         ListiStod.Add(new Stodhestaspilid("Þóroddur frá Þóroddsstöðum","Oddur frá Selfossi", "Hlökk frá Laugarvatni",1521,8.28,9.04,8.74,218,142,126));
+         ListiStod.Add(new Stodhestaspilid("Klerkur frá Bjarnanesi 1","Glampi frá Vatnsleysu", "Snælda frá Bjarnanesi 1", 2500,7.52,7.55,7.54,11,145,104)); //Joker
+         ListiStod.Add(new Stodhestaspilid("Álfur frá Selfossi", "Orri frá Þúfu", "Álfadís frá Selfossi",1510,7.98,8.44,8.26,82,140,124));
+         ListiStod.Add(new Stodhestaspilid("Keilir frá Miðsitju","Ófeigur frá Flugumýri", "Krafla frá Sauðárkroki", 6600,8.42,8.77,8.63,446,138,119));
+         ListiStod.Add(new Stodhestaspilid("Krummi frá Blesastöðum 1a", "Kraflar frá Miðsitju", "Raun frá Húsatoftum",0230,8.13,8.55,8.38,86,141,120));
+         ListiStod.Add(new Stodhestaspilid("Akkur frá Brautarholti", "Galsi frá Sauðárkróki","Askja frá Miðsitju",1520,8.23,8.80,8.57,72,140,122));
+         ListiStod.Add(new Stodhestaspilid("Roði frá Múla", "Orri frá Þúfu", "Litla-Þruma frá Múla",1500, 8.30,7.84,8.07,294,138,119));
+         ListiStod.Add(new Stodhestaspilid("Örn frá Efri-Gegnishólum","Aron frá Strandarhöfði","Hrönn frá Efri-Gegnishólum", 1510,7.89,8.45,8.23,18,135,120));
+         ListiStod.Add(new Stodhestaspilid("Blær frá Torfunesi", "Markús frá Langholtsparti","Bylgja frá Torfunesi",2500,8.17,8.80,8.55,87,141,126));
+         ListiStod.Add(new Stodhestaspilid("Gustur frá Hóli","Gáski frá Hofsstöðum", "Abba frá Gili",0100,8.13,9.01,8.57,644,136,124));
+         ListiStod.Add(new Stodhestaspilid("Moli frá Skriðu", "Glampi frá Vatnsleysu", "Gullinstjarna frá Akureyri", 2700,7.98,8.36,8.21,80,141,110));
+         ListiStod.Add(new Stodhestaspilid("Þorsti frá Garði", "Ögri frá Háholti", "Þröm frá Gunnarsholti",1722,8.11,8.60,8.40,57,140,116));
+         ListiStod.Add(new Stodhestaspilid("Sær frá Bakkakoti","Orri frá Þúfu","Sæla frá Gerðum", 7200,7.96,9.05,8.62,344,143,129));
+         ListiStod.Add(new Stodhestaspilid("Eldjárn frá Tjaldhólum","Hugi frá Hafsteinsstöðum", "Hera frá Jaðri", 1500,8.09,8.85,8.55,132,140,119));
+         ListiStod.Add(new Stodhestaspilid("Aron frá Strandarhöfði", "Óður frá Brún", "Yrsa frá Skjálg", 2200,8.22,8.75,8.54,276,144,122));
+         ListiStod.Add(new Stodhestaspilid("Aris frá Akureyri","Grunur frá Oddhóli","Kátína frá Hömrum", 2500,8.26,8.62,8.47,19,142,117));
+         ListiStod.Add(new Stodhestaspilid("Kormákur frá Flugumýri 2", "Kveikur frá Miðsitju", "Kolskör frá Gunnarsholti",3700,8.23,8.37,8.30,327,141,119));
+         ListiStod.Add(new Stodhestaspilid("Huginn frá Haga 1", "Sólon frá Hóli", "Vænting frá Haga 1", 0200,7.84,9.05,8.57,218,140,119));
+         ListiStod.Add(new Stodhestaspilid("Ás frá Ármóti","Sær frá Bakkakoti", "Bót frá Hólum", 2510, 8.00,8.75,8.45,64,142,121));
+         ListiStod.Add(new Stodhestaspilid("Baugur frá Víðinesi 2","Hróður frá Refsstöðum", "Gáta frá Hofi", 1514,8.33,8.58,8.48,68,142,121));
+         ListiStod.Add(new Stodhestaspilid("Dagur frá Strandarhöfði", "Baldur frá Bakka", "Sóley frá Tumabrekku", 4500,7.96,8.26,8.14,56,138,113));
+         ListiStod.Add(new Stodhestaspilid("Leiknir frá Vakurstöðum", "Safír frá Viðvík", "Lyfting frá Ysta-Mó", 2520,8.04,8.44,8.28,153,137,109));
+         ListiStod.Add(new Stodhestaspilid("Grunnur frá Oddhóli", "Kraflar frá Miðsitju", "Gola frá Brekkum", 2520,8.02,8.38,8.23,84,137,117));
+         ListiStod.Add(new Stodhestaspilid("Natna frá Ketilsstöðum", "Kolfinnur frá Kjarnholtum 1", "Vænting frá Ketilsstöðum", 3500,8.23,8.51,8.40,22,142,119));
+         ListiStod.Add(new Stodhestaspilid("Glymur frá Árgerði", "Kraftur frá Bringu", "Glæða frá Árgerði", 1500,8.18,8.53,8.39,35,140,113));
+         ListiStod.Add(new Stodhestaspilid("Adam frá Ásmundarstöðum", "Stígur frá Kjartansstöðum", "Siggu-Brúnka frá Ásmundars.",2700,8.17,8.49,8.36,345,137,124));
+         ListiStod.Add(new Stodhestaspilid("Glampi frá Vatnsleysu", "Smári frá Borgarhóli", "Albína frá Vatnsleysu",2790, 7.85,8.68,8.35,401,138,113));
+         ListiStod.Add(new Stodhestaspilid("Galsi frá Sauðárkróki", "Ófeigur frá Flugumýri", "Gnótt frá Sauðárkróki", 7500,7.87,9.01,8.44,485,137,116));
+         ListiStod.Add(new Stodhestaspilid("Markús frá Langhotlasparti", "Orri frá Þúfu", "Von frá Bjarnastöðum", 2700,7.99,8.61,8.36,293,140,127));
+         ListiStod.Add(new Stodhestaspilid("Vilmundur frá Feti","Orri frá Þúfu","Vigdís frá Feti", 2700,7.96,8.95,8.56,59,138,130));
+            
          while(Listi.Count() > 0)
          {
              int randtala = random.Next(0, Listi.Count());
