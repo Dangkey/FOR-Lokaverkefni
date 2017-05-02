@@ -8,35 +8,28 @@ namespace Lokaverkefni
 {
     class Stodhestaspilid : TopTrumps
     {
-        public string Fodurfadir { get; private set; }
-        public string Fodurmodir { get; private set; }
-        public string Modurfadir { get; private set; }
-        public string Modurmodir { get; private set; }
-        public int Faedinganumer { get; private set; }
-        public string litaskyring { get; private set; }
-        public int litanumer { get; private set; }
-        public string Domur { get; private set; }
-        public string Bygging { get; private set; }
-        public int Frjosemi { get; private set; }
-        public int Bakvodvi { get; private set; }
-        public double Malir { get; private set; }
+        public string Litanumer { get; private set; }        
+        public string ByggingAdaleinkunn{ get; private set; }        
+        public string HaefileikarAdaleinkunn { get; private set; }
+        public double Adaleinkunn { get; private set; }
+        public int Afkvaemi { get; private set; }
+        public int Stangarmal { get; private set; }
+        public int Kynbotamat { get; private set; }
 
-        public Stodhestaspilid(string nafn, string fadir, string modir, double þyngd,int mjolkurlagni,double ull,int afkvaemi,double laeri,int frjosemi, int bakvodvi, double malir)
+        public Stodhestaspilid(string nafn, string fadir, string modir, string litanumer,string byggingAdaleinkunn,string haefileikarAdaleinkunn,double adaleinkunn,int afkvaemi, int stangarmal, int kynbotamat)
             : base(nafn,fadir,modir)
         {
-            Þyngd = þyngd;
-            Mjolkurlagni = mjolkurlagni;
-            Ull = ull;
+            Litanumer = litanumer;            
+            ByggingAdaleinkunn = byggingAdaleinkunn;            
+            HaefileikarAdaleinkunn = haefileikarAdaleinkunn;
+            Adaleinkunn = adaleinkunn;
             Afkvaemi = afkvaemi;
-            Laeri = laeri;
-            Frjosemi = frjosemi;
-            Bakvodvi = bakvodvi;
-            Malir = malir;
-            //nafn = Nafn
+            Stangarmal   = stangarmal;
+            Kynbotamat = kynbotamat;            
         }
         public override string ToString()
         {
-            return base.ToString() + string.Format("Þyngd: {0},\nMjolkurlagni: {1},\nUll: {2},\nLæri: {3},\nFrjósemi: {4},\nBakvöðvi: {5},\nMalir: {6},\nAfkvæmi: {7}\n", Þyngd,Mjolkurlagni, Ull,  Laeri, Frjosemi, Bakvodvi, Malir, Afkvaemi);
+            return base.ToString() + string.Format("Litanumer: {0},\nBygging Aðaleinkunn: {1},\nHæfileikar Aðaleinkunn: {2},\nAðaleinkunn: {3},\nAfkvæmi: {4},\nStangarmál: {5},\nKynbótamat: {6}", Litanumer,ByggingAdaleinkunn,HaefileikarAdaleinkunn, Adaleinkunn,Afkvaemi,Stangarmal,Kynbotamat);
         }
     }
 }
