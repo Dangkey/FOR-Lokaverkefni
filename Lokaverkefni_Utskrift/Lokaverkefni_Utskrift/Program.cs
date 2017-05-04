@@ -19,6 +19,7 @@ namespace Lokaverkefni_Utskrift
            List<Hrutaspilid> Spilnot = new List<Hrutaspilid>();
             List<Hrutaspilid> Spiltolvu = new List<Hrutaspilid>();
             List<Hrutaspilid> TempHrut = new List<Hrutaspilid>();
+            List<Hrutaspilid> Jafntefli = new List<Hrutaspilid>();
 
             List<Stodhestaspilid> Spilnot2 = new List<Stodhestaspilid>();
             List<Stodhestaspilid> Spiltolvu2 = new List<Stodhestaspilid>();
@@ -166,26 +167,25 @@ namespace Lokaverkefni_Utskrift
 
          do
          {
-         for (int i = 0; i < 52; i++)
-         {
+         
              
-             int x = i;
-             TempHrut.Add(Spilnot[i]);
+             
+             TempHrut.Add(Spilnot[0]);
              Console.WriteLine("Spil notanda:");
-             Console.WriteLine(TempHrut[i]);
-             TempHrut.Remove(Spilnot[i]);
+             Console.WriteLine(TempHrut[0]);
+             TempHrut.Remove(Spilnot[0]);
 
              Console.WriteLine("\nHvað vilt þú bera saman");
              val2 = Convert.ToInt32(Console.ReadLine());
-
-             TempHrut.Add(Spiltolvu[x]);           
+             
+             TempHrut.Add(Spiltolvu[0]);           
              Console.WriteLine("Spil Tölvu:");
-             Console.WriteLine(TempHrut[x]);
-             TempHrut.Remove(Spilnot[x]);
+             Console.WriteLine(TempHrut[0]);
+             TempHrut.Remove(Spilnot[0]);
              Console.ReadKey();
              if (val2 == 1)
              {
-                 if (Spilnot[i].Þyngd > Spiltolvu[x].Þyngd)
+                 if (Spilnot[0].Þyngd > Spiltolvu[0].Þyngd)
                  {
                      stignot++;
                  }
@@ -196,7 +196,7 @@ namespace Lokaverkefni_Utskrift
              }
              if (val2 == 2)
              {
-                 if (Spilnot[i].Mjolkurlagni > Spiltolvu[x].Mjolkurlagni)
+                 if (Spilnot[0].Mjolkurlagni > Spiltolvu[0].Mjolkurlagni)
                  {
                      stignot++;
                  }
@@ -210,77 +210,146 @@ namespace Lokaverkefni_Utskrift
              }
              if (val2 == 3)
              {
-                 if (Spilnot[i].Ull > Spiltolvu[x].Ull)
+                 if (Spilnot[0].Ull > Spiltolvu[0].Ull)
                  {
-                     stignot++;
+                     Console.WriteLine("Þú vannst");
+                     Spilnot.Add(Spilnot[0]);
+                     Spilnot.Add(Spiltolvu[0]);
+                     Spilnot.AddRange(Jafntefli);
+                     Jafntefli.Clear();
+                 }
+                 else if(Spilnot[0].Laeri < Spiltolvu[0].Laeri)
+                 {
+                     Console.WriteLine("Tölvan vann");
+                     Spiltolvu.Add(Spilnot[0]);
+                     Spiltolvu.Add(Spiltolvu[0]);
                  }
                  else
                  {
-                     stigtolva++;
+                     Jafntefli.Add(Spilnot[0]);
+                     Jafntefli.Add(Spiltolvu[0]);
                  }
              }
              if (val2 == 4)
              {
-                 if (Spilnot[i].Laeri > Spiltolvu[x].Laeri)
+                 if (Spilnot[0].Laeri > Spiltolvu[0].Laeri)
                  {
-                     stignot++;
+                     Console.WriteLine("Þú vannst");
+                     Spilnot.Add(Spilnot[0]);
+                     Spilnot.Add(Spiltolvu[0]);
+                     Spilnot.AddRange(Jafntefli);
+                     Jafntefli.Clear();
+                 }
+                 else if (Spilnot[0].Laeri < Spiltolvu[0].Laeri)
+                 {
+                     Console.WriteLine("Tölvan vann");
+                     Spiltolvu.Add(Spilnot[0]);
+                     Spiltolvu.Add(Spiltolvu[0]);
                  }
                  else
                  {
-                     stigtolva++;
+                     Jafntefli.Add(Spilnot[0]);
+                     Jafntefli.Add(Spiltolvu[0]);
                  }
              }
              if (val2 == 5)
              {
-                 if (Spilnot[i].Frjosemi > Spiltolvu[x].Frjosemi)
+                 if (Spilnot[0].Frjosemi > Spiltolvu[0].Frjosemi)
                  {
-                     stignot++;
+                     Console.WriteLine("Þú vannst");
+                     Spilnot.Add(Spilnot[0]);
+                     Spilnot.Add(Spiltolvu[0]);
+                     Spilnot.AddRange(Jafntefli);
+                     Jafntefli.Clear();
+                 }
+                 else if (Spilnot[0].Frjosemi < Spiltolvu[0].Frjosemi)
+                 {
+                     Console.WriteLine("Tölvan vann");
+                     Spiltolvu.Add(Spilnot[0]);
+                     Spiltolvu.Add(Spiltolvu[0]);
                  }
                  else
                  {
-                     stigtolva++;
+                     Jafntefli.Add(Spilnot[0]);
+                     Jafntefli.Add(Spiltolvu[0]);
                  }
              }
              if (val2 == 6)
              {
-                 if (Spilnot[i].Bakvodvi > Spiltolvu[x].Bakvodvi)
+                 if (Spilnot[0].Bakvodvi > Spiltolvu[0].Bakvodvi)
                  {
-                     stignot++;
+                     Console.WriteLine("Þú vannst");
+                     Spilnot.Add(Spilnot[0]);
+                     Spilnot.Add(Spiltolvu[0]);
+                     Spilnot.AddRange(Jafntefli);
+                     Jafntefli.Clear();
+                 }
+                 else if(Spilnot[0].Bakvodvi < Spiltolvu[0].Bakvodvi)
+                 {
+                     Console.WriteLine("Tölvan vann");
+                     Spiltolvu.Add(Spilnot[0]);
+                     Spiltolvu.Add(Spiltolvu[0]);
                  }
                  else
                  {
-                     stigtolva++;
+                     Jafntefli.Add(Spilnot[0]);
+                     Jafntefli.Add(Spiltolvu[0]);
                  }
              }
              if (val2 == 7)
              {
-                 if (Spilnot[i].Malir > Spiltolvu[x].Malir)
+                 if (Spilnot[0].Malir > Spiltolvu[0].Malir)
                  {
-                     stignot++;
+                     Console.WriteLine("Þú vannst");
+                     Spilnot.Add(Spilnot[0]);
+                     Spilnot.Add(Spiltolvu[0]);
+                     Spilnot.AddRange(Jafntefli);
+                     Jafntefli.Clear();
+                 }
+                 else if(Spilnot[0].Malir < Spiltolvu[0].Malir)
+                 {
+                     Console.WriteLine("Tölvan vann");
+                     Spiltolvu.Add(Spilnot[0]);
+                     Spiltolvu.Add(Spiltolvu[0]);
                  }
                  else
                  {
-                     stigtolva++;
+                     Jafntefli.Add(Spilnot[0]);
+                     Jafntefli.Add(Spiltolvu[0]);
                  }
              }
              if (val2 == 8)
              {
-                 if (Spilnot[i].Afkvaemi > Spiltolvu[x].Afkvaemi)
+                 if (Spilnot[0].Afkvaemi > Spiltolvu[0].Afkvaemi)
                  {
-                     stignot++;
+                     Console.WriteLine("Þú vannst");
+                     Spilnot.Add(Spilnot[0]);
+                     Spilnot.Add(Spiltolvu[0]);
+                     Spilnot.AddRange(Jafntefli);
+                     Jafntefli.Clear();
+                 }
+                 else if (Spilnot[0].Afkvaemi < Spiltolvu[0].Afkvaemi)
+                 {
+                     Console.WriteLine("Tölvan vann");
+                     Spiltolvu.Add(Spilnot[0]);
+                     Spiltolvu.Add(Spiltolvu[0]);
                  }
                  else
                  {
-                     stigtolva++;
+                     Jafntefli.Add(Spilnot[0]);
+                     Jafntefli.Add(Spiltolvu[0]);
                  }
+                    
              }
-             Console.WriteLine("\nTölvan er með " + stigtolva + " stig");
-             Console.WriteLine("Notandinn er með " + stignot + " stig");
+             Spilnot.Remove(Spilnot[0]);
+             Spiltolvu.Remove(Spiltolvu[0]);
+             Console.WriteLine("\nTölvan er með " + Spiltolvu.Count + " spil");
+             Console.WriteLine("Notandinn er með " + Spilnot.Count + " spil");
              
              Console.ReadKey();
              Console.Clear();
-         }
-         } while (val2 != 0);
+         
+         } while (Spilnot.Count != 0 && Spiltolvu.Count != 0);
          Console.ReadKey();
                  break;
              case 2:
