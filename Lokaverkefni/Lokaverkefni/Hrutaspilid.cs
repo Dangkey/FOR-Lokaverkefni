@@ -45,7 +45,7 @@ namespace Lokaverkefni
         }
         public override string ToString()
         {
-            return base.ToString() + string.Format("Þyngd: {0},\nMjolkurlagni: {1},\nUll: {2},\nLæri: {3},\nFrjósemi: {4},\nBakvöðvi: {5},\nMalir: {6},\nAfkvæmi: {7}\n", Þyngd,Mjolkurlagni, Ull,  Laeri, Frjosemi, Bakvodvi, Malir, Afkvaemi);
+            return base.ToString() + string.Format("1. Þyngd: {0}\n2. Mjolkurlagni: {1}\n3. Ull: {2}\n4. Læri: {3}\n5. Frjósemi: {4}\n6. Bakvöðvi: {5}\n7. Malir: {6}\n8. Afkvæmi: {7}\n", Þyngd,Mjolkurlagni, Ull,  Laeri, Frjosemi, Bakvodvi, Malir, Afkvaemi);
         }
 
         
