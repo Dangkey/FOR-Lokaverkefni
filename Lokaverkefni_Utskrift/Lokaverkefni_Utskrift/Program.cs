@@ -12,12 +12,21 @@ namespace Lokaverkefni_Utskrift
         static void Main(string[] args)
         {
             int teljarispil = 0;
-
+            int val = 0;
             Random random = new Random();
            List<Hrutaspilid> Listi = new List<Hrutaspilid>();
            List<Stodhestaspilid> ListiStod = new List<Stodhestaspilid>();
            List<Hrutaspilid> Spilnot = new List<Hrutaspilid>();
             List<Hrutaspilid> Spiltolvu = new List<Hrutaspilid>();
+            List<Hrutaspilid> TempHrut = new List<Hrutaspilid>();
+
+            List<Stodhestaspilid> Spilnot2 = new List<Stodhestaspilid>();
+            List<Stodhestaspilid> Spiltolvu2 = new List<Stodhestaspilid>();
+            List<Stodhestaspilid> TempStod = new List<Stodhestaspilid>();
+            int stignot = 0;
+            int stigtolva = 0;
+            int val2 = 0;
+            
 
          Listi.Add(new Hrutaspilid("Sokki","Kækur","Hvísl", 41, 108,7.0,0,17.3,108,144,8.5));
          Listi.Add(new Hrutaspilid("Freyðir", "Flúðar", "03-290", 46.4, 105, 7.9, 135, 17.4, 103, 118, 8.6));
@@ -48,7 +57,7 @@ namespace Lokaverkefni_Utskrift
          Listi.Add(new Hrutaspilid("Gotti", "Gári", "03-301", 47.2,100, 9.0, 182, 17.5, 102, 119, 8.6));
          Listi.Add(new Hrutaspilid("Hrói", "Kveikur", "02-307", 63, 107, 8.0, 0, 17.3, 108, 108, 8.5));
          Listi.Add(new Hrutaspilid("Dökkvi", "Bifur", "04-390", 45.5, 102, 7.8, 157, 17.2, 105, 120, 8.5));
-         Listi.Add(new Hrutaspilid("Bolli", "Bolla", "Bolla", 51, 109, 9.0,0,17.5, 111, 109, 9.0));
+         Listi.Add(new Hrutaspilid("Bolli", "Bollur", "Bolla", 51, 109, 9.0,0,17.5, 111, 109, 9.0));
          Listi.Add(new Hrutaspilid("Týr", "Kútur", "Þilja", 38, 96, 8.0, 0, 17.5, 105, 131, 8.5));
          Listi.Add(new Hrutaspilid("Papi", "Api", "Elma", 45.6, 82, 8.0, 428 ,17.6, 106, 140, 8.7));
          Listi.Add(new Hrutaspilid("Tengill", "Lámur", "03-372", 45, 94, 8.0, 0, 17.5, 97, 145, 9.0));
@@ -100,7 +109,6 @@ namespace Lokaverkefni_Utskrift
          ListiStod.Add(new Stodhestaspilid("Funi frá Vindási","Dynur frá Hvammi", "Drífa frá Vindási",1600,8.08,8.65,8.42,29,144,122));
          ListiStod.Add(new Stodhestaspilid("Orri frá Þúfu", "Otur frá Sauðárkróki", "Dama frá Þúfu",2500,8.08,8.61,8.34,1049,136,127));
          ListiStod.Add(new Stodhestaspilid("Þóroddur frá Þóroddsstöðum","Oddur frá Selfossi", "Hlökk frá Laugarvatni",1521,8.28,9.04,8.74,218,142,126));
-         ListiStod.Add(new Stodhestaspilid("Klerkur frá Bjarnanesi 1","Glampi frá Vatnsleysu", "Snælda frá Bjarnanesi 1", 2500,7.52,7.55,7.54,11,145,104)); //Joker
          ListiStod.Add(new Stodhestaspilid("Álfur frá Selfossi", "Orri frá Þúfu", "Álfadís frá Selfossi",1510,7.98,8.44,8.26,82,140,124));
          ListiStod.Add(new Stodhestaspilid("Keilir frá Miðsitju","Ófeigur frá Flugumýri", "Krafla frá Sauðárkroki", 6600,8.42,8.77,8.63,446,138,119));
          ListiStod.Add(new Stodhestaspilid("Krummi frá Blesastöðum 1a", "Kraflar frá Miðsitju", "Raun frá Húsatoftum",0230,8.13,8.55,8.38,86,141,120));
@@ -129,9 +137,18 @@ namespace Lokaverkefni_Utskrift
          ListiStod.Add(new Stodhestaspilid("Galsi frá Sauðárkróki", "Ófeigur frá Flugumýri", "Gnótt frá Sauðárkróki", 7500,7.87,9.01,8.44,485,137,116));
          ListiStod.Add(new Stodhestaspilid("Markús frá Langhotlasparti", "Orri frá Þúfu", "Von frá Bjarnastöðum", 2700,7.99,8.61,8.36,293,140,127));
          ListiStod.Add(new Stodhestaspilid("Vilmundur frá Feti","Orri frá Þúfu","Vigdís frá Feti", 2700,7.96,8.95,8.56,59,138,130));
-            
-         while(Listi.Count() > 0)
+
+         Console.WriteLine("Hvaða spil viltu spila");
+         Console.WriteLine("1. Hrútaspilið");
+         Console.WriteLine("2. Stóðhestaspilið");
+         Console.WriteLine("0. Hætta");
+         val = Convert.ToInt32(Console.ReadLine());
+         switch (val)
          {
+             case 1:
+                 while(Listi.Count() > 0)
+         {
+             Console.Clear();
              int randtala = random.Next(0, Listi.Count());
              if (teljarispil % 2 == 0)
              {
@@ -145,23 +162,265 @@ namespace Lokaverkefni_Utskrift
              teljarispil++;
              Listi.Remove(Listi[randtala]);
          }
-         foreach (var x in Listi)
-         {
-             Console.WriteLine(x);
-         }
-            /*
 
-            for (int i = 0; i < 4; i++)
-			{
-			    Console.WriteLine(toptrump[i] + "\n");
-                Console.WriteLine("VS\n");
-                Console.WriteLine(toptrump[i + 1] + "\n");
-                Console.WriteLine("Ýttu á Enter til að draga næstu spil");
-                Console.ReadKey();
-                Console.Clear();
-			}*/
+
+         do
+         {
+         for (int i = 0; i < 52; i++)
+         {
+             
+             int x = i;
+             TempHrut.Add(Spilnot[i]);
+             Console.WriteLine("Spil notanda:");
+             Console.WriteLine(TempHrut[i]);
+             TempHrut.Remove(Spilnot[i]);
+
+             Console.WriteLine("\nHvað vilt þú bera saman");
+             val2 = Convert.ToInt32(Console.ReadLine());
+
+             TempHrut.Add(Spiltolvu[x]);           
+             Console.WriteLine("Spil Tölvu:");
+             Console.WriteLine(TempHrut[x]);
+             TempHrut.Remove(Spilnot[x]);
+             Console.ReadKey();
+             if (val2 == 1)
+             {
+                 if (Spilnot[i].Þyngd > Spiltolvu[x].Þyngd)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 2)
+             {
+                 if (Spilnot[i].Mjolkurlagni > Spiltolvu[x].Mjolkurlagni)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+
+
+
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 3)
+             {
+                 if (Spilnot[i].Ull > Spiltolvu[x].Ull)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 4)
+             {
+                 if (Spilnot[i].Laeri > Spiltolvu[x].Laeri)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 5)
+             {
+                 if (Spilnot[i].Frjosemi > Spiltolvu[x].Frjosemi)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 6)
+             {
+                 if (Spilnot[i].Bakvodvi > Spiltolvu[x].Bakvodvi)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 7)
+             {
+                 if (Spilnot[i].Malir > Spiltolvu[x].Malir)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 8)
+             {
+                 if (Spilnot[i].Afkvaemi > Spiltolvu[x].Afkvaemi)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             Console.WriteLine("\nTölvan er með " + stigtolva + " stig");
+             Console.WriteLine("Notandinn er með " + stignot + " stig");
+             
+             Console.ReadKey();
+             Console.Clear();
+         }
+         } while (val2 != 0);
+         Console.ReadKey();
+                 break;
+             case 2:
+                 while(ListiStod.Count() > 0)
+         {
+             Console.Clear();
+             int randtala = random.Next(0, ListiStod.Count());
+             if (teljarispil % 2 == 0)
+             {
+                 Spilnot2.Add(ListiStod[randtala]);
+                 
+             }
+             else
+             {
+                 Spiltolvu2.Add(ListiStod[randtala]);
+             }
+             teljarispil++;
+             ListiStod.Remove(ListiStod[randtala]);
+         }
+
+
+         do
+         {
+         for (int i = 0; i < 52; i++)
+         {
+             
+             int x = i;
+             TempStod.Add(Spilnot2[i]);
+             Console.WriteLine("Spil notanda:");
+             Console.WriteLine(TempStod[i]);
+             TempStod.Remove(Spilnot2[i]);
+
+             Console.WriteLine("\nHvað vilt þú bera saman");
+             val2 = Convert.ToInt32(Console.ReadLine());
+
+             TempStod.Add(Spiltolvu2[x]);           
+             Console.WriteLine("Spil Tölvu:");
+             Console.WriteLine(TempStod[x]);
+             TempStod.Remove(Spilnot2[x]);
+             Console.ReadKey();
+             if (val2 == 1)
+             {
+                 if (Spilnot2[i].Litanumer > Spiltolvu2[x].Litanumer)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 2)
+             {
+                 if (Spilnot2[i].ByggingAdaleinkunn > Spiltolvu2[x].ByggingAdaleinkunn)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+
+
+
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 3)
+             {
+                 if (Spilnot2[i].HaefileikarAdaleinkunn > Spiltolvu2[x].HaefileikarAdaleinkunn)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 4)
+             {
+                 if (Spilnot2[i].Adaleinkunn > Spiltolvu2[x].Adaleinkunn)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 5)
+             {
+                 if (Spilnot2[i].Afkvaemi > Spiltolvu2[x].Afkvaemi)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 6)
+             {
+                 if (Spilnot2[i].Stangarmal > Spiltolvu2[x].Stangarmal)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             if (val2 == 7)
+             {
+                 if (Spilnot2[i].Kynbotamat > Spiltolvu2[x].Kynbotamat)
+                 {
+                     stignot++;
+                 }
+                 else
+                 {
+                     stigtolva++;
+                 }
+             }
+             Console.WriteLine("\nTölvan er með " + stigtolva + " stig");
+             Console.WriteLine("Notandinn er með " + stignot + " stig");
+             
+             Console.ReadKey();
+             Console.Clear();
+         }
+         } while (val2 != 0);
+         Console.ReadKey();
+                 break;
+             default:
+                 break;
+         }
+         Console.WriteLine("byebye");
+         Console.ReadKey();
+
+         
+        
+           
             
-            Console.ReadKey();
+           
         }
     }
 }
