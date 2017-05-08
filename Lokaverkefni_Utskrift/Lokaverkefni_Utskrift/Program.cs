@@ -11,9 +11,14 @@ namespace Lokaverkefni_Utskrift
     {
         static void Main(string[] args)
         {
+            //breytur
             int teljarispil = 0;
             int val = 0;
+            int val2 = 0;
+            //random
             Random random = new Random();
+
+            //listar
            List<Hrutaspilid> Listi = new List<Hrutaspilid>();
            List<Stodhestaspilid> ListiStod = new List<Stodhestaspilid>();
            List<Hrutaspilid> Spilnot = new List<Hrutaspilid>();
@@ -26,9 +31,9 @@ namespace Lokaverkefni_Utskrift
             List<Stodhestaspilid> TempStod = new List<Stodhestaspilid>();
             List<Stodhestaspilid> Jafntefli2 = new List<Stodhestaspilid>();
            
-            int val2 = 0;
             
-
+            
+         //Spil fyrir Hrútaspilið
          Listi.Add(new Hrutaspilid("Sokki","Kækur","Hvísl", 41, 108,7.0,0,17.3,108,144,8.5));
          Listi.Add(new Hrutaspilid("Freyðir", "Flúðar", "03-290", 46.4, 105, 7.9, 135, 17.4, 103, 118, 8.6));
          Listi.Add(new Hrutaspilid("Vöðvi", "Vöðvi", "Fura", 47, 100, 8.0, 0, 17.5, 106, 112, 9.0));
@@ -81,11 +86,11 @@ namespace Lokaverkefni_Utskrift
          Listi.Add(new Hrutaspilid("Krókur", "Tumi", "Dröfn", 47.5, 101, 8.0, 218, 17.5, 97, 157, 8.7));
          Listi.Add(new Hrutaspilid("Undri", "Kútur", "02-037",49.1, 108, 8.4, 76, 17.2, 100, 109, 8.4));
          Listi.Add(new Hrutaspilid("Ás", "Snoddi", "01-120", 48.8, 121, 8.1, 82, 17.2, 108, 110, 8.3));
-            //Stodhestaspilid
+            
 
 
 
-        
+        //spil fyrir Stóðhestaspilið
          ListiStod.Add(new Stodhestaspilid("Þristur frá Feti", "Orri frá Þúfu", "Skák frá Feti", 2510, 8.14, 8.35, 8.27, 275, 141, 117));
          ListiStod.Add(new Stodhestaspilid("Þokki frá Kýrholti","Sólon frá Hóli","Þörf frá Hólum",2200,8.28,9.04,8.73,175,143,123));
          ListiStod.Add(new Stodhestaspilid("Sveinn-Hervar frá Þúfu","Orri frá Þúfu","Rák frá Þúfu",2500,8.06,8.38,8.25,291,139,119));
@@ -143,73 +148,77 @@ namespace Lokaverkefni_Utskrift
          Console.WriteLine("1. Hrútaspilið");
          Console.WriteLine("2. Stóðhestaspilið");
          Console.WriteLine("0. Hætta");
-         val = Convert.ToInt32(Console.ReadLine());
-         switch (val)
+         val = Convert.ToInt32(Console.ReadLine());//tekur inn valið
+         switch (val)//switch sem keyrir eftir valinu
          {
              case 1:
-                 while(Listi.Count() > 0)
+                 while(Listi.Count() > 0)//á meðan það eru meira en 0 spil í listanum
          {
-             Console.Clear();
-             int randtala = random.Next(0, Listi.Count());
-             if (teljarispil % 2 == 0)
+             Console.Clear();//clearar consolið
+             int randtala = random.Next(0, Listi.Count());//býr til randomtölu
+             if (teljarispil % 2 == 0)//ef talan er deilanleg með 2
              {
-                 Spilnot.Add(Listi[randtala]);
+                 Spilnot.Add(Listi[randtala]);//setur random spil í stokk notenda
                  
              }
              else
              {
-                 Spiltolvu.Add(Listi[randtala]);
+                 Spiltolvu.Add(Listi[randtala]);//setur random spil í stokk tölvu
              }
              teljarispil++;
-             Listi.Remove(Listi[randtala]);
+             Listi.Remove(Listi[randtala]);//tekur spilið úr stokknum
          }
 
 
          do
          {
-         
+             Console.WriteLine("Notandinn er með " + Spilnot.Count + " spil");
+             Console.WriteLine("Tölvan er með " + Spiltolvu.Count + " spil\n");
              
              
-             TempHrut.Add(Spilnot[0]);
+             TempHrut.Add(Spilnot[0]);//setur spil notenda í temp lista
              Console.WriteLine("Spil notanda:");
-             Console.WriteLine(TempHrut[0]);
-             TempHrut.Remove(Spilnot[0]);
+             Console.WriteLine(TempHrut[0]);//skrifar út spilið
+             TempHrut.Remove(Spilnot[0]);//tekur spilið úr temp listanum
 
              Console.WriteLine("\nHvað vilt þú bera saman");
-             val2 = Convert.ToInt32(Console.ReadLine());
+             val2 = Convert.ToInt32(Console.ReadLine());//les inn val
              
-             TempHrut.Add(Spiltolvu[0]);           
+             TempHrut.Add(Spiltolvu[0]);//setur spil tölvu í temp lista
              Console.WriteLine("Spil Tölvu:");
-             Console.WriteLine(TempHrut[0]);
-             TempHrut.Remove(Spiltolvu[0]);
+             Console.WriteLine(TempHrut[0]);//skrifar út spilið
+             TempHrut.Remove(Spiltolvu[0]);//tekur spilið úr temp listanum
              
              if (val2 == 1)
              {
-                 if (Spilnot[0].Þyngd > Spiltolvu[0].Þyngd)
+                 if (Spilnot[0].Þyngd > Spiltolvu[0].Þyngd)//ef tala notenda er stærri en spil tölvu
                  {
-                     Console.WriteLine("Þú vannst");
-                     Spilnot.Add(Spilnot[0]);
-                     Spilnot.Add(Spiltolvu[0]);
-                     Spilnot.AddRange(Jafntefli);
+                     Console.WriteLine("\nÞú vannst!");
+                     Spilnot.Add(Spilnot[0]);//setur spil notenda aftur í stokk notenda
+                     Spilnot.Add(Spiltolvu[0]);//setur spil tölvu í stokk notenda
+                     Spilnot.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk notenda
                      Jafntefli.Clear();
                  }
                  else if (Spilnot[0].Þyngd < Spiltolvu[0].Þyngd)
                  {
-                     Console.WriteLine("Tölvan vann");
-                     Spiltolvu.Add(Spilnot[0]);
-                     Spiltolvu.Add(Spiltolvu[0]);
+                     Console.WriteLine("\nTölvan vann!");
+                     Spiltolvu.Add(Spilnot[0]);//setur spil notenda í stokk tölvu
+                     Spiltolvu.Add(Spiltolvu[0]);//setur spil tölvu aftur í stokk tölvu
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
-                     Jafntefli.Add(Spilnot[0]);
-                     Jafntefli.Add(Spiltolvu[0]);
+                     Console.WriteLine("\nJafntefli!");
+                     Jafntefli.Add(Spilnot[0]);//setur spil notenda í jafntefla listann
+                     Jafntefli.Add(Spiltolvu[0]);//setur spil tölvu í jafntefla listann
                  }
              }
              if (val2 == 2)
              {
                  if (Spilnot[0].Mjolkurlagni > Spiltolvu[0].Mjolkurlagni)
                  {
-                     Console.WriteLine("Þú vannst");
+                     Console.WriteLine("\nÞú vannst!");
                      Spilnot.Add(Spilnot[0]);
                      Spilnot.Add(Spiltolvu[0]);
                      Spilnot.AddRange(Jafntefli);
@@ -217,12 +226,15 @@ namespace Lokaverkefni_Utskrift
                  }
                  else if (Spilnot[0].Mjolkurlagni < Spiltolvu[0].Mjolkurlagni)
                  {
-                     Console.WriteLine("Tölvan vann");
+                     Console.WriteLine("\nTölvan vann!");
                      Spiltolvu.Add(Spilnot[0]);
                      Spiltolvu.Add(Spiltolvu[0]);
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
+                     Console.WriteLine("\nJafntefli!");
                      Jafntefli.Add(Spilnot[0]);
                      Jafntefli.Add(Spiltolvu[0]);
                  }
@@ -231,7 +243,7 @@ namespace Lokaverkefni_Utskrift
              {
                  if (Spilnot[0].Ull > Spiltolvu[0].Ull)
                  {
-                     Console.WriteLine("Þú vannst");
+                     Console.WriteLine("\nÞú vannst!");
                      Spilnot.Add(Spilnot[0]);
                      Spilnot.Add(Spiltolvu[0]);
                      Spilnot.AddRange(Jafntefli);
@@ -239,12 +251,15 @@ namespace Lokaverkefni_Utskrift
                  }
                  else if(Spilnot[0].Ull < Spiltolvu[0].Ull)
                  {
-                     Console.WriteLine("Tölvan vann");
+                     Console.WriteLine("\nTölvan vann!");
                      Spiltolvu.Add(Spilnot[0]);
                      Spiltolvu.Add(Spiltolvu[0]);
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
+                     Console.WriteLine("\nJafntefli!");
                      Jafntefli.Add(Spilnot[0]);
                      Jafntefli.Add(Spiltolvu[0]);
                  }
@@ -253,7 +268,7 @@ namespace Lokaverkefni_Utskrift
              {
                  if (Spilnot[0].Laeri > Spiltolvu[0].Laeri)
                  {
-                     Console.WriteLine("Þú vannst");
+                     Console.WriteLine("\nÞú vannst!");
                      Spilnot.Add(Spilnot[0]);
                      Spilnot.Add(Spiltolvu[0]);
                      Spilnot.AddRange(Jafntefli);
@@ -261,12 +276,15 @@ namespace Lokaverkefni_Utskrift
                  }
                  else if (Spilnot[0].Laeri < Spiltolvu[0].Laeri)
                  {
-                     Console.WriteLine("Tölvan vann");
+                     Console.WriteLine("\nTölvan vann!");
                      Spiltolvu.Add(Spilnot[0]);
                      Spiltolvu.Add(Spiltolvu[0]);
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
+                     Console.WriteLine("\nJafntefli!");
                      Jafntefli.Add(Spilnot[0]);
                      Jafntefli.Add(Spiltolvu[0]);
                  }
@@ -275,7 +293,7 @@ namespace Lokaverkefni_Utskrift
              {
                  if (Spilnot[0].Frjosemi > Spiltolvu[0].Frjosemi)
                  {
-                     Console.WriteLine("Þú vannst");
+                     Console.WriteLine("\nÞú vannst!");
                      Spilnot.Add(Spilnot[0]);
                      Spilnot.Add(Spiltolvu[0]);
                      Spilnot.AddRange(Jafntefli);
@@ -283,12 +301,15 @@ namespace Lokaverkefni_Utskrift
                  }
                  else if (Spilnot[0].Frjosemi < Spiltolvu[0].Frjosemi)
                  {
-                     Console.WriteLine("Tölvan vann");
+                     Console.WriteLine("\nTölvan vann!");
                      Spiltolvu.Add(Spilnot[0]);
                      Spiltolvu.Add(Spiltolvu[0]);
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
+                     Console.WriteLine("\nJafntefli!");
                      Jafntefli.Add(Spilnot[0]);
                      Jafntefli.Add(Spiltolvu[0]);
                  }
@@ -297,7 +318,7 @@ namespace Lokaverkefni_Utskrift
              {
                  if (Spilnot[0].Bakvodvi > Spiltolvu[0].Bakvodvi)
                  {
-                     Console.WriteLine("Þú vannst");
+                     Console.WriteLine("\nÞú vannst!");
                      Spilnot.Add(Spilnot[0]);
                      Spilnot.Add(Spiltolvu[0]);
                      Spilnot.AddRange(Jafntefli);
@@ -305,12 +326,15 @@ namespace Lokaverkefni_Utskrift
                  }
                  else if(Spilnot[0].Bakvodvi < Spiltolvu[0].Bakvodvi)
                  {
-                     Console.WriteLine("Tölvan vann");
+                     Console.WriteLine("\nTölvan vann!");
                      Spiltolvu.Add(Spilnot[0]);
                      Spiltolvu.Add(Spiltolvu[0]);
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
+                     Console.WriteLine("\nJafntefli!");
                      Jafntefli.Add(Spilnot[0]);
                      Jafntefli.Add(Spiltolvu[0]);
                  }
@@ -319,7 +343,7 @@ namespace Lokaverkefni_Utskrift
              {
                  if (Spilnot[0].Malir > Spiltolvu[0].Malir)
                  {
-                     Console.WriteLine("Þú vannst");
+                     Console.WriteLine("\nÞú vannst!");
                      Spilnot.Add(Spilnot[0]);
                      Spilnot.Add(Spiltolvu[0]);
                      Spilnot.AddRange(Jafntefli);
@@ -327,12 +351,15 @@ namespace Lokaverkefni_Utskrift
                  }
                  else if(Spilnot[0].Malir < Spiltolvu[0].Malir)
                  {
-                     Console.WriteLine("Tölvan vann");
+                     Console.WriteLine("\nTölvan vann!");
                      Spiltolvu.Add(Spilnot[0]);
                      Spiltolvu.Add(Spiltolvu[0]);
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
+                     Console.WriteLine("\nJafntefli!");
                      Jafntefli.Add(Spilnot[0]);
                      Jafntefli.Add(Spiltolvu[0]);
                  }
@@ -341,7 +368,7 @@ namespace Lokaverkefni_Utskrift
              {
                  if (Spilnot[0].Afkvaemi > Spiltolvu[0].Afkvaemi)
                  {
-                     Console.WriteLine("Þú vannst");
+                     Console.WriteLine("\nÞú vannst!");
                      Spilnot.Add(Spilnot[0]);
                      Spilnot.Add(Spiltolvu[0]);
                      Spilnot.AddRange(Jafntefli);
@@ -349,28 +376,34 @@ namespace Lokaverkefni_Utskrift
                  }
                  else if (Spilnot[0].Afkvaemi < Spiltolvu[0].Afkvaemi)
                  {
-                     Console.WriteLine("Tölvan vann");
+                     Console.WriteLine("\nTölvan vann!");
                      Spiltolvu.Add(Spilnot[0]);
                      Spiltolvu.Add(Spiltolvu[0]);
+                     Spiltolvu.AddRange(Jafntefli);//setur spil frá jafnteflum í stokk tölvu
+                     Jafntefli.Clear();
                  }
                  else
                  {
+                     Console.WriteLine("\nJafntefli!");
                      Jafntefli.Add(Spilnot[0]);
                      Jafntefli.Add(Spiltolvu[0]);
                  }
                     
              }
-             Spilnot.Remove(Spilnot[0]);
-             Spiltolvu.Remove(Spiltolvu[0]);
+             Spilnot.Remove(Spilnot[0]);//tekur spil notenda úr stokknum
+             Spiltolvu.Remove(Spiltolvu[0]);//setur spil tölvu úr stokknum
              Console.WriteLine("\nTölvan er með " + Spiltolvu.Count + " spil");
              Console.WriteLine("Notandinn er með " + Spilnot.Count + " spil");
+             Console.WriteLine("Enter til að halda áfram");
              
              Console.ReadKey();
              Console.Clear();
          
-         } while (Spilnot.Count != 0 && Spiltolvu.Count != 0);
+         } while (Spilnot.Count != 0 && Spiltolvu.Count != 0);//á meðan stokkur notenda og tölvu er meira en 0
          Console.ReadKey();
                  break;
+
+
              case 2:
                  while (ListiStod.Count() > 0)
                  {
@@ -392,6 +425,9 @@ namespace Lokaverkefni_Utskrift
 
                  do
                  {
+                     Console.WriteLine("Notandinn er með " + Spilnot2.Count + " spil");
+                     Console.WriteLine("Tölvan er með " + Spiltolvu2.Count + " spil\n");
+                     
 
                      TempStod.Add(Spilnot2[0]);
                      Console.WriteLine("Spil notanda:");
@@ -405,12 +441,12 @@ namespace Lokaverkefni_Utskrift
                      Console.WriteLine("Spil Tölvu:");
                      Console.WriteLine(TempStod[0]);
                      TempStod.Remove(Spiltolvu2[0]);
-                     Console.ReadKey();
+                     
                      if (val2 == 1)
                      {
                          if (Spilnot2[0].Litanumer > Spiltolvu2[0].Litanumer)
                          {
-                             Console.WriteLine("Þú vannst");
+                             Console.WriteLine("\n\nÞú vannst!!");
                              Spilnot2.Add(Spilnot2[0]);
                              Spilnot2.Add(Spiltolvu2[0]);
                              Spilnot2.AddRange(Jafntefli2);
@@ -418,12 +454,15 @@ namespace Lokaverkefni_Utskrift
                          }
                          else if (Spilnot2[0].Litanumer < Spiltolvu2[0].Litanumer)
                          {
-                             Console.WriteLine("Tölvan vann");
+                             Console.WriteLine("\n\nTölvan vann!!");
                              Spiltolvu2.Add(Spilnot2[0]);
                              Spiltolvu2.Add(Spiltolvu2[0]);
+                             Spiltolvu2.AddRange(Jafntefli2);
+                             Jafntefli2.Clear();
                          }
                          else
                          {
+                             Console.WriteLine("\nJafntefli!");
                              Jafntefli2.Add(Spilnot2[0]);
                              Jafntefli2.Add(Spiltolvu2[0]);
                          }
@@ -433,7 +472,7 @@ namespace Lokaverkefni_Utskrift
                      {
                          if (Spilnot2[0].ByggingAdaleinkunn > Spiltolvu2[0].ByggingAdaleinkunn)
                          {
-                             Console.WriteLine("Þú vannst");
+                             Console.WriteLine("\nÞú vannst!");
                              Spilnot2.Add(Spilnot2[0]);
                              Spilnot2.Add(Spiltolvu2[0]);
                              Spilnot2.AddRange(Jafntefli2);
@@ -441,12 +480,15 @@ namespace Lokaverkefni_Utskrift
                          }
                          else if (Spilnot2[0].ByggingAdaleinkunn < Spiltolvu2[0].ByggingAdaleinkunn)
                          {
-                             Console.WriteLine("Tölvan vann");
+                             Console.WriteLine("\nTölvan vann!");
                              Spiltolvu2.Add(Spilnot2[0]);
                              Spiltolvu2.Add(Spiltolvu2[0]);
+                             Spiltolvu2.AddRange(Jafntefli2);
+                             Jafntefli2.Clear();
                          }
                          else
                          {
+                             Console.WriteLine("\nJafntefli!");
                              Jafntefli2.Add(Spilnot2[0]);
                              Jafntefli2.Add(Spiltolvu2[0]);
                          }
@@ -455,7 +497,7 @@ namespace Lokaverkefni_Utskrift
                      {
                          if (Spilnot2[0].HaefileikarAdaleinkunn > Spiltolvu2[0].HaefileikarAdaleinkunn)
                          {
-                             Console.WriteLine("Þú vannst");
+                             Console.WriteLine("\nÞú vannst!");
                              Spilnot2.Add(Spilnot2[0]);
                              Spilnot2.Add(Spiltolvu2[0]);
                              Spilnot2.AddRange(Jafntefli2);
@@ -463,12 +505,15 @@ namespace Lokaverkefni_Utskrift
                          }
                          else if (Spilnot2[0].HaefileikarAdaleinkunn < Spiltolvu2[0].HaefileikarAdaleinkunn)
                          {
-                             Console.WriteLine("Tölvan vann");
+                             Console.WriteLine("\nTölvan vann!");
                              Spiltolvu2.Add(Spilnot2[0]);
                              Spiltolvu2.Add(Spiltolvu2[0]);
+                             Spiltolvu2.AddRange(Jafntefli2);
+                             Jafntefli2.Clear();
                          }
                          else
                          {
+                             Console.WriteLine("\nJafntefli!");
                              Jafntefli2.Add(Spilnot2[0]);
                              Jafntefli2.Add(Spiltolvu2[0]);
                          }
@@ -477,7 +522,7 @@ namespace Lokaverkefni_Utskrift
                      {
                          if (Spilnot2[0].Adaleinkunn > Spiltolvu2[0].Adaleinkunn)
                          {
-                             Console.WriteLine("Þú vannst");
+                             Console.WriteLine("\nÞú vannst!");
                              Spilnot2.Add(Spilnot2[0]);
                              Spilnot2.Add(Spiltolvu2[0]);
                              Spilnot2.AddRange(Jafntefli2);
@@ -485,12 +530,15 @@ namespace Lokaverkefni_Utskrift
                          }
                          else if (Spilnot2[0].Adaleinkunn < Spiltolvu2[0].Adaleinkunn)
                          {
-                             Console.WriteLine("Tölvan vann");
+                             Console.WriteLine("\nTölvan vann!");
                              Spiltolvu2.Add(Spilnot2[0]);
                              Spiltolvu2.Add(Spiltolvu2[0]);
+                             Spiltolvu2.AddRange(Jafntefli2);
+                             Jafntefli2.Clear();
                          }
                          else
                          {
+                             Console.WriteLine("\nJafntefli!");
                              Jafntefli2.Add(Spilnot2[0]);
                              Jafntefli2.Add(Spiltolvu2[0]);
                          }
@@ -499,7 +547,7 @@ namespace Lokaverkefni_Utskrift
                      {
                          if (Spilnot2[0].Afkvaemi > Spiltolvu2[0].Afkvaemi)
                          {
-                             Console.WriteLine("Þú vannst");
+                             Console.WriteLine("\nÞú vannst!");
                              Spilnot2.Add(Spilnot2[0]);
                              Spilnot2.Add(Spiltolvu2[0]);
                              Spilnot2.AddRange(Jafntefli2);
@@ -507,12 +555,15 @@ namespace Lokaverkefni_Utskrift
                          }
                          else if (Spilnot2[0].Afkvaemi < Spiltolvu2[0].Afkvaemi)
                          {
-                             Console.WriteLine("Tölvan vann");
+                             Console.WriteLine("\nTölvan vann!");
                              Spiltolvu2.Add(Spilnot2[0]);
                              Spiltolvu2.Add(Spiltolvu2[0]);
+                             Spiltolvu2.AddRange(Jafntefli2);
+                             Jafntefli2.Clear();
                          }
                          else
                          {
+                             Console.WriteLine("\nJafntefli!");
                              Jafntefli2.Add(Spilnot2[0]);
                              Jafntefli2.Add(Spiltolvu2[0]);
                          }
@@ -521,7 +572,7 @@ namespace Lokaverkefni_Utskrift
                      {
                          if (Spilnot2[0].Stangarmal > Spiltolvu2[0].Stangarmal)
                          {
-                             Console.WriteLine("Þú vannst");
+                             Console.WriteLine("\nÞú vannst!");
                              Spilnot2.Add(Spilnot2[0]);
                              Spilnot2.Add(Spiltolvu2[0]);
                              Spilnot2.AddRange(Jafntefli2);
@@ -529,12 +580,15 @@ namespace Lokaverkefni_Utskrift
                          }
                          else if (Spilnot2[0].Stangarmal < Spiltolvu2[0].Stangarmal)
                          {
-                             Console.WriteLine("Tölvan vann");
+                             Console.WriteLine("\nTölvan vann!");
                              Spiltolvu2.Add(Spilnot2[0]);
                              Spiltolvu2.Add(Spiltolvu2[0]);
+                             Spiltolvu2.AddRange(Jafntefli2);
+                             Jafntefli2.Clear();
                          }
                          else
                          {
+                             Console.WriteLine("\nJafntefli!");
                              Jafntefli2.Add(Spilnot2[0]);
                              Jafntefli2.Add(Spiltolvu2[0]);
                          }
@@ -543,7 +597,7 @@ namespace Lokaverkefni_Utskrift
                      {
                          if (Spilnot2[0].Kynbotamat > Spiltolvu2[0].Kynbotamat)
                          {
-                             Console.WriteLine("Þú vannst");
+                             Console.WriteLine("\nÞú vannst!");
                              Spilnot2.Add(Spilnot2[0]);
                              Spilnot2.Add(Spiltolvu2[0]);
                              Spilnot2.AddRange(Jafntefli2);
@@ -551,19 +605,25 @@ namespace Lokaverkefni_Utskrift
                          }
                          else if (Spilnot2[0].Kynbotamat < Spiltolvu2[0].Kynbotamat)
                          {
-                             Console.WriteLine("Tölvan vann");
+                             Console.WriteLine("\nTölvan vann!");
                              Spiltolvu2.Add(Spilnot2[0]);
                              Spiltolvu2.Add(Spiltolvu2[0]);
+                             Spiltolvu2.AddRange(Jafntefli2);
+                             Jafntefli2.Clear();
                          }
                          else
                          {
+                             Console.WriteLine("\nJafntefli!");
                              Jafntefli2.Add(Spilnot2[0]);
                              Jafntefli2.Add(Spiltolvu2[0]);
                          }
 
                      }
+                     Spilnot2.Remove(Spilnot2[0]);//tekur spil notenda úr stokknum
+                     Spiltolvu2.Remove(Spiltolvu2[0]);//setur spil tölvu úr stokknum
                      Console.WriteLine("\nTölvan er með " + Spiltolvu2.Count + " spil");
                      Console.WriteLine("Notandinn er með " + Spilnot2.Count + " spil");
+                     Console.WriteLine("Enter til að halda áfram");
 
                      Console.ReadKey();
                      Console.Clear();
